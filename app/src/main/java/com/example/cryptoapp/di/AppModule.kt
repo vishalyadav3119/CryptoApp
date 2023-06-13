@@ -3,6 +3,7 @@ package com.example.cryptoapp.di
 import com.example.cryptoapp.common.Constants
 import com.example.cryptoapp.data.remote.CryptoApi
 import com.example.cryptoapp.data.repository.CoinRepositoryImpl
+import com.example.cryptoapp.domain.repository.CoinRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,5 +28,5 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideCoinRepository(api: CryptoApi) = CoinRepositoryImpl(api)
+    fun provideCoinRepository(api: CryptoApi):CoinRepository = CoinRepositoryImpl(api)
 }
